@@ -73,7 +73,7 @@
       if (r.bottom < -200 || r.top > vh + 200) return;
       var mid = r.top + r.height / 2;
       var d = (mid - vh / 2) / vh;            /* -1 .. 1 */
-      img.style.transform = 'scale(1.14) translate3d(0,' + (d * 26).toFixed(2) + 'px,0)';
+      img.style.transform = 'scale(1.05) translate3d(0,' + (d * 12).toFixed(2) + 'px,0)';
     });
 
     var y = window.pageYOffset || doc.scrollTop;
@@ -141,7 +141,7 @@
       var im = m.querySelector('img');
       if (!im || !m.classList.contains('in')) return;
       var d = ((r.top + r.height / 2) - vh / 2) / vh;
-      im.style.transform = 'scale(1.05) translate3d(0,' + (d * -10).toFixed(2) + 'px,0)';
+      im.style.transform = 'translate3d(0,' + (d * -6).toFixed(2) + 'px,0)';
     });
   }
   window.addEventListener('scroll', function () { requestAnimationFrame(drift); }, { passive: true });
@@ -232,6 +232,21 @@
       veil.classList.add('on');
       setTimeout(function () { location.href = a.getAttribute('href'); }, 520);
     });
+  });
+
+
+  /* ---------- 14. resolution guard ---------- */
+  function capToNatural(im) {
+    if (!im.naturalWidth) return;
+    var host = im.closest('.fig,.hero-media figure,.page-head,figure') || im.parentNode;
+    if (im.closest('.band')) return;
+    var cap = im.naturalWidth;
+    var m = im.parentNode;
+    if (m && m.classList.contains('mask')) { m.style.maxWidth = cap + 'px'; m.style.marginLeft = 'auto'; m.style.marginRight = 'auto'; }
+  }
+  document.querySelectorAll('img').forEach(function (im) {
+    if (im.complete) capToNatural(im);
+    else im.addEventListener('load', function () { capToNatural(im); });
   });
 
 })();
