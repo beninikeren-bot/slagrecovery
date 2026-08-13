@@ -356,3 +356,21 @@ html.no-motion h2 .w i{transform:none}
 }
 .veil.on{transform:translate3d(0,0,0)}
 html.no-motion .veil{display:none}
+
+/* ---------- hero rebuild ---------- */
+.hero-wide .fig img{aspect-ratio:32/9;max-height:420px}
+.riskline{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid var(--line);padding-top:24px}
+.riskline .n{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mn);
+  display:block;margin-bottom:8px;
+}
+.riskline p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)}
+@media(max-width:820px){.riskline{grid-template-columns:1fr;gap:18px}}
+
+.burden{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px}
+.burden > div{border-left:2px solid var(--ox);padding-left:18px}
+.burden .bn{
+  font-family:var(--cond);font-weight:600;font-size:18px;display:block;margin-bottom:6px;
+}
+.burden p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2);max-width:46ch}
+@media(max-width:700px){.burden{grid-template-columns:1fr}}
