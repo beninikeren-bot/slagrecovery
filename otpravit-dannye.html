@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Отправить данные о материале — R. Keren</title>
 <meta name="description" content="Пришлите данные о вашем материале — мы скажем, есть ли смысл двигаться дальше. Это ни к чему не обязывает.">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -95,32 +95,11 @@
     <span class="eyebrow">Форма</span>
     <h2>Опишите материал</h2>
 
-    <form id="f" style="margin-top:28px">
-      <div class="field">
-        <label for="org">Предприятие</label>
-        <input id="org" name="org" type="text" required>
-      </div>
-      <div class="field">
-        <label for="name">Контактное лицо</label>
-        <input id="name" name="name" type="text" required>
-      </div>
-      <div class="cols" style="gap:20px">
-        <div class="field">
-          <label for="mail">E-mail</label>
-          <input id="mail" name="mail" type="email" required>
-        </div>
-        <div class="field">
-          <label for="tel">Телефон</label>
-          <input id="tel" name="tel" type="tel">
-        </div>
-      </div>
-      <div class="field">
-        <label for="msg">Материал, объём, что хотите получить</label>
-        <textarea id="msg" name="msg" required></textarea>
-      </div>
-      <button class="btn solid" type="submit">Отправить данные</button>
-      <p class="form-note">Кнопка откроет ваш почтовый клиент с готовым письмом. Проверьте текст и нажмите «Отправить» в почте.</p>
-    </form>
+    <div class="gform">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScI-W68bzvSW0HRbbDJ2yCkPW03ZwFfJ9RKuKu4j6HCnj4_Vw/viewform?embedded=true"
+              title="Заявка на оценку материала" loading="lazy">Загрузка формы…</iframe>
+    </div>
+    <p class="form-note">Заявка уходит напрямую. Ответим на указанную почту.</p>
   </div>
 </section>
 
@@ -156,22 +135,8 @@
   </div>
 </footer>
 
-<script>
-document.getElementById('f').addEventListener('submit', function(e){
-  e.preventDefault();
-  var v = function(id){ return document.getElementById(id).value.trim(); };
-  var body =
-    'Предприятие: ' + v('org') + '\n' +
-    'Контактное лицо: ' + v('name') + '\n' +
-    'E-mail: ' + v('mail') + '\n' +
-    'Телефон: ' + v('tel') + '\n\n' +
-    'Материал и задача:\n' + v('msg') + '\n';
-  window.location.href = 'mailto:info@slagrecovery.com'
-    + '?subject=' + encodeURIComponent('Данные о материале — ' + v('org'))
-    + '&body=' + encodeURIComponent(body);
-});
-</script>
 
-<script src="site.js?v=3" defer></script>
+
+<script src="site.js?v=4" defer></script>
 </body>
 </html>
