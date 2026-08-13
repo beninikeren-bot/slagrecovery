@@ -297,3 +297,62 @@ html.no-motion .mask img{transform:none}
   display:block;width:100%;height:1750px;border:0;
 }
 @media(max-width:700px){.gform iframe{height:2050px}}
+
+/* ---------- intro curtain ---------- */
+html.loading{overflow:hidden}
+.intro{
+  position:fixed;inset:0;z-index:200;background:var(--ink);
+  display:flex;align-items:flex-end;justify-content:center;
+  transition:transform .9s cubic-bezier(.76,0,.24,1);
+}
+.intro.out{transform:translate3d(0,-101%,0)}
+.intro-in{
+  width:100%;max-width:var(--wrap);padding:0 28px 40px;
+  display:flex;align-items:baseline;justify-content:space-between;color:var(--paper);
+}
+.intro-mark{font-family:var(--cond);font-weight:600;font-size:22px;letter-spacing:.06em}
+.intro-num{font-family:var(--mono);font-size:clamp(48px,11vw,120px);line-height:1;letter-spacing:-.02em}
+
+/* ---------- cursor ---------- */
+@media(pointer:fine){
+  .cursor,.cursor-dot{position:fixed;left:0;top:0;pointer-events:none;z-index:180;border-radius:50%}
+  .cursor{
+    width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid var(--ink-3);
+    transition:width .3s ease,height .3s ease,margin .3s ease,background .3s ease,border-color .3s ease;
+  }
+  .cursor.big{width:62px;height:62px;margin:-31px 0 0 -31px;background:rgba(81,78,122,.10);border-color:var(--mn)}
+  .cursor-dot{width:5px;height:5px;margin:-2.5px 0 0 -2.5px;background:var(--ink)}
+}
+
+/* ---------- running strip ---------- */
+.ticker{
+  overflow:hidden;border-bottom:1px solid var(--line);background:var(--paper-2);
+  padding:13px 0;white-space:nowrap;
+}
+.ticker-row{display:inline-flex;animation:tick 42s linear infinite}
+.ticker-row span{
+  font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--ink-3);
+  padding-right:0;
+}
+@keyframes tick{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+html.no-motion .ticker-row{animation:none}
+
+/* ---------- h2 reveal ---------- */
+h2 .w{display:inline-block;overflow:hidden;vertical-align:bottom}
+h2 .w i{
+  display:inline-block;font-style:inherit;transform:translate3d(0,105%,0);
+  transition:transform .85s cubic-bezier(.19,1,.22,1);
+}
+h2.lit .w i{transform:none}
+html.no-motion h2 .w i{transform:none}
+
+/* ---------- magnetic button ---------- */
+.btn{transition:transform .35s cubic-bezier(.19,1,.22,1),background .3s ease,color .3s ease}
+
+/* ---------- page transition veil ---------- */
+.veil{
+  position:fixed;inset:0;z-index:190;background:var(--ink);pointer-events:none;
+  transform:translate3d(0,101%,0);transition:transform .55s cubic-bezier(.76,0,.24,1);
+}
+.veil.on{transform:translate3d(0,0,0)}
+html.no-motion .veil{display:none}
