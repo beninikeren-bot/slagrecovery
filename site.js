@@ -238,15 +238,28 @@
   /* ---------- 14. resolution guard ---------- */
   function capToNatural(im) {
     if (!im.naturalWidth) return;
-    var host = im.closest('.fig,.hero-media figure,.page-head,figure') || im.parentNode;
-    if (im.closest('.band')) return;
     var cap = im.naturalWidth;
+    var band = im.closest('.band');
+    if (band) {
+      band.style.maxWidth = cap + 'px';
+      band.style.marginLeft = 'auto';
+      band.style.marginRight = 'auto';
+      return;
+    }
     var m = im.parentNode;
-    if (m && m.classList.contains('mask')) { m.style.maxWidth = cap + 'px'; m.style.marginLeft = 'auto'; m.style.marginRight = 'auto'; }
+    if (m && m.classList.contains('mask')) {
+      m.style.maxWidth = cap + 'px';
+      m.style.marginLeft = 'auto';
+      m.style.marginRight = 'auto';
+    }
   }
-  document.querySelectorAll('img').forEach(function (im) {
-    if (im.complete) capToNatural(im);
-    else im.addEventListener('load', function () { capToNatural(im); });
-  });
+  function runGuard() {
+    document.querySelectorAll('img').forEach(function (im) {
+      if (im.complete) capToNatural(im);
+      else im.addEventListener('load', function () { capToNatural(im); });
+    });
+  }
+  runGuard();
+  window.addEventListener('resize', runGuard);
 
 })();
