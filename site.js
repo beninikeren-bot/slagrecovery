@@ -73,7 +73,7 @@
       if (r.bottom < -200 || r.top > vh + 200) return;
       var mid = r.top + r.height / 2;
       var d = (mid - vh / 2) / vh;            /* -1 .. 1 */
-      img.style.transform = 'scale(1.05) translate3d(0,' + (d * 12).toFixed(2) + 'px,0)';
+      img.style.transform = 'translate3d(0,' + (d * 8).toFixed(2) + 'px,0)';
     });
 
     var y = window.pageYOffset || doc.scrollTop;
@@ -234,32 +234,5 @@
     });
   });
 
-
-  /* ---------- 14. resolution guard ---------- */
-  function capToNatural(im) {
-    if (!im.naturalWidth) return;
-    var cap = im.naturalWidth;
-    var band = im.closest('.band');
-    if (band) {
-      band.style.maxWidth = cap + 'px';
-      band.style.marginLeft = 'auto';
-      band.style.marginRight = 'auto';
-      return;
-    }
-    var m = im.parentNode;
-    if (m && m.classList.contains('mask')) {
-      m.style.maxWidth = cap + 'px';
-      m.style.marginLeft = 'auto';
-      m.style.marginRight = 'auto';
-    }
-  }
-  function runGuard() {
-    document.querySelectorAll('img').forEach(function (im) {
-      if (im.complete) capToNatural(im);
-      else im.addEventListener('load', function () { capToNatural(im); });
-    });
-  }
-  runGuard();
-  window.addEventListener('resize', runGuard);
 
 })();
