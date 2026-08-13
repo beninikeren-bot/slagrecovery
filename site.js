@@ -150,7 +150,7 @@
   /* ---------- 8. intro curtain ---------- */
   var intro = document.createElement('div');
   intro.className = 'intro';
-  intro.innerHTML = '<div class="intro-in"><span class="intro-mark">R. KEREN</span><span class="intro-num">0</span></div>';
+  intro.innerHTML = '<div class="intro-in"><span class="intro-mark">R. Keren</span><span class="intro-num">0</span></div>';
   document.body.appendChild(intro);
   document.documentElement.classList.add('loading');
 
