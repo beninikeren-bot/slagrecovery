@@ -279,14 +279,14 @@ nav a[aria-current="page"]:after{background:var(--mn);transform:scaleX(1)}
 }
 .mask.in:after{transform:scaleX(0);transform-origin:100% 50%}
 html.js .mask img{
-  transform:scale(1.14);
+  transform:scale(1.06);
   transition:transform 1.6s cubic-bezier(.19,1,.22,1),filter .8s ease;
   will-change:transform;
 }
-html.js .mask.in img{transform:scale(1.05)}
+html.js .mask.in img{transform:none}
 html.no-motion .mask:after{display:none}
 html.no-motion .mask img{transform:none}
-.hero-media figure:hover .mask img,.fig:hover .mask img{transform:scale(1.09)}
+.hero-media figure:hover .mask img,.fig:hover .mask img{transform:scale(1.03)}
 
 /* ---------- embedded form ---------- */
 .gform{
@@ -386,3 +386,12 @@ html.no-motion .veil{display:none}
 .brand span{display:inline-block;margin-left:2px}
 .foot-mark{display:block;width:40px;height:40px;margin-bottom:16px;opacity:.9}
 @media(max-width:700px){.brand-mark{width:28px;height:28px}}
+
+
+/* ---------- resolution guard: не растягивать выше исходника ---------- */
+.fig,.hero-media figure,.page-head .mask{max-width:100%}
+.mask{margin:0 auto}
+img{image-rendering:auto}
+
+/* полосы: без агрессивного увеличения */
+.band img{max-height:280px}
