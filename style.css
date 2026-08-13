@@ -174,28 +174,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--mn);outline-offset:
 }
 .hero-media figure{margin:0}
 .hero-media img{
-  width:100%;aspect-ratio:3/2;max-height:360px;object-fit:cover;object-position:center;
+  width:100%;
   border-radius:2px;display:block;filter:saturate(.92);
 }
 @media(max-width:820px){
   .hero-media{grid-template-columns:1fr;gap:24px}
-  .hero-media img{aspect-ratio:16/9}
+  
 }
 
 .band{position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .band img{
-  width:100%;aspect-ratio:16/5;max-height:300px;object-fit:cover;object-position:center 45%;
+  width:100%;
   display:block;filter:saturate(.85);
 }
 .band:after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(28,34,37,.06),rgba(28,34,37,.34));
 }
-@media(max-width:700px){.band img{aspect-ratio:16/7}}
+
 
 .fig{margin:0}
 .fig img{
-  width:100%;aspect-ratio:3/2;max-height:360px;object-fit:cover;object-position:center;
+  width:100%;
   display:block;border-radius:2px;
 }
 .fig figcaption{
@@ -205,12 +205,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--mn);outline-offset:
 
 .page-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .page-head img{
-  width:100%;aspect-ratio:3/2;max-height:360px;object-fit:cover;object-position:center;
+  width:100%;
   border-radius:2px;display:block;filter:saturate(.9);
 }
 @media(max-width:820px){
   .page-head{grid-template-columns:1fr;gap:24px}
-  .page-head img{aspect-ratio:16/9}
+  
 }
 
 /* ---------- motion layer ---------- */
@@ -358,7 +358,7 @@ html.no-motion h2 .w i{transform:none}
 html.no-motion .veil{display:none}
 
 /* ---------- hero rebuild ---------- */
-.hero-wide .fig img{aspect-ratio:21/9;max-height:480px;object-position:center 45%}
+
 .riskline{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid var(--line);padding-top:24px}
 .riskline .n{
   font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mn);
@@ -393,6 +393,18 @@ html.no-motion .veil{display:none}
 img{max-width:100%;height:auto;margin-left:auto;margin-right:auto}
 .mask{margin-left:auto;margin-right:auto}
 .band{display:flex;justify-content:center;background:var(--paper-2)}
-.band img{max-height:none}
+
 .fig img,.hero-media img,.page-head img{aspect-ratio:auto}
 .fig,.hero-media figure{text-align:center}
+
+
+/* ---------- финально: фото показываются целиком, в своём размере ---------- */
+img{
+  display:block;width:auto;max-width:100%;height:auto;
+  aspect-ratio:auto!important;object-fit:contain!important;
+  margin-left:auto;margin-right:auto;
+}
+.band{display:block;background:var(--paper-2);padding:0}
+.band .mask,.band img{max-width:100%;margin-left:auto;margin-right:auto}
+.fig img,.hero-media img,.page-head img{border-radius:2px}
+@media(max-width:700px){img{width:100%}}
