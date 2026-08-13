@@ -408,3 +408,20 @@ img{
 .band .mask,.band img{max-width:100%;margin-left:auto;margin-right:auto}
 .fig img,.hero-media img,.page-head img{border-radius:2px}
 @media(max-width:700px){img{width:100%}}
+
+
+/* ---------- раскладка изображений по типу места ---------- */
+/* полоса: одна на страницу, во всю ширину, но не шире оригинала */
+.band{display:block;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band img{width:100%;max-width:100%;display:block}
+
+/* вставка: по центру колонки, спокойная ширина */
+.fig{margin:34px auto;text-align:center}
+.fig img{max-width:min(100%,840px)}
+.fig figcaption{margin-top:10px}
+
+/* вертикальные и квадратные кадры — уже, чтобы не давили страницу */
+.fig img[height]{max-height:620px;width:auto}
+
+/* парные вставки в колонках */
+.cols .fig img,.cols-3 .fig img{max-width:100%}
