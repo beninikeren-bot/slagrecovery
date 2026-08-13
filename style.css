@@ -358,7 +358,7 @@ html.no-motion h2 .w i{transform:none}
 html.no-motion .veil{display:none}
 
 /* ---------- hero rebuild ---------- */
-.hero-wide .fig img{aspect-ratio:32/9;max-height:420px}
+.hero-wide .fig img{aspect-ratio:21/9;max-height:480px;object-position:center 45%}
 .riskline{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid var(--line);padding-top:24px}
 .riskline .n{
   font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mn);
