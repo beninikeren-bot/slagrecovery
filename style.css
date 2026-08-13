@@ -378,3 +378,11 @@ html.no-motion .veil{display:none}
 /* тёмные полосы — чуть выше и без насыщенного фильтра */
 .band img{filter:none}
 .band{background:#0E1417}
+
+/* ---------- логотип ---------- */
+.brand{display:inline-flex;align-items:center;gap:11px}
+.brand-mark{display:block;width:34px;height:34px;flex:0 0 auto}
+.brand b{line-height:1}
+.brand span{display:inline-block;margin-left:2px}
+.foot-mark{display:block;width:40px;height:40px;margin-bottom:16px;opacity:.9}
+@media(max-width:700px){.brand-mark{width:28px;height:28px}}
