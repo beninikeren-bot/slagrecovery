@@ -110,4 +110,40 @@
       last = y;
     }, { passive: true });
   }
+
+  /* ---------- 7. photo reveal: curtain wipe + slow scale ---------- */
+  var photos = Array.prototype.slice.call(document.querySelectorAll('img')).filter(function (im) {
+    return !im.closest('header') && !im.closest('footer') && !im.closest('.band');
+  });
+
+  photos.forEach(function (im) {
+    if (im.parentNode.classList && im.parentNode.classList.contains('mask')) return;
+    var mask = document.createElement('span');
+    mask.className = 'mask';
+    im.parentNode.insertBefore(mask, im);
+    mask.appendChild(im);
+  });
+
+  var masks = Array.prototype.slice.call(document.querySelectorAll('.mask'));
+  var mio = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); mio.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  masks.forEach(function (m) { mio.observe(m); });
+
+  /* gentle drift on in-flow photos while scrolling */
+  function drift() {
+    var vh = window.innerHeight;
+    masks.forEach(function (m) {
+      var r = m.getBoundingClientRect();
+      if (r.bottom < -100 || r.top > vh + 100) return;
+      var im = m.querySelector('img');
+      if (!im || !m.classList.contains('in')) return;
+      var d = ((r.top + r.height / 2) - vh / 2) / vh;
+      im.style.transform = 'scale(1.05) translate3d(0,' + (d * -10).toFixed(2) + 'px,0)';
+    });
+  }
+  window.addEventListener('scroll', function () { requestAnimationFrame(drift); }, { passive: true });
+
 })();
