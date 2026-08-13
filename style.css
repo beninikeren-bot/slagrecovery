@@ -29,7 +29,7 @@ header{border-bottom:1px solid var(--line);background:var(--paper);position:stic
 .hbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;flex-wrap:wrap}
 .brand{display:flex;align-items:baseline;gap:12px;text-decoration:none;color:var(--ink)}
 .brand b{font-family:var(--cond);font-weight:600;font-size:21px;letter-spacing:.02em}
-.brand span{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase}
+.brand span{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em}
 nav{display:flex;gap:22px;flex-wrap:wrap}
 nav a{
   font-family:var(--cond);font-weight:500;font-size:15px;letter-spacing:.01em;
