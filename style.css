@@ -374,3 +374,7 @@ html.no-motion .veil{display:none}
 }
 .burden p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2);max-width:46ch}
 @media(max-width:700px){.burden{grid-template-columns:1fr}}
+
+/* тёмные полосы — чуть выше и без насыщенного фильтра */
+.band img{filter:none}
+.band{background:#0E1417}
