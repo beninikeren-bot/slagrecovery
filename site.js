@@ -48,17 +48,16 @@
   var h1 = document.querySelector('h1');
   if (h1 && !h1.dataset.split) {
     h1.dataset.split = '1';
-    var words = h1.innerHTML.split(/(\s+)/);
-    h1.innerHTML = words.map(function (w) {
-      if (!w.trim()) return w;
-      return '<span class="w"><i>' + w + '</i></span>';
-    }).join('');
-    requestAnimationFrame(function () {
-      h1.querySelectorAll('.w i').forEach(function (n, i) {
-        n.style.transitionDelay = (60 + i * 45) + 'ms';
-      });
-      h1.classList.add('lit');
-    });
+    var idx = 0;
+    /* split each line separately so <br> is preserved */
+    var lines = h1.innerHTML.split(/<br\s*\/?>/i);
+    h1.innerHTML = lines.map(function (line) {
+      return line.split(/(\s+)/).map(function (w) {
+        if (!w.trim()) return w;
+        return '<span class="w"><i style="transition-delay:' + (60 + (idx++) * 45) + 'ms">' + w + '</i></span>';
+      }).join('');
+    }).join('<br>');
+    requestAnimationFrame(function () { h1.classList.add('lit'); });
   }
 
   /* ---------- 4. parallax on full-bleed bands + slow hero zoom ---------- */
