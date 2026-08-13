@@ -146,4 +146,92 @@
   }
   window.addEventListener('scroll', function () { requestAnimationFrame(drift); }, { passive: true });
 
+
+  /* ---------- 8. intro curtain ---------- */
+  var intro = document.createElement('div');
+  intro.className = 'intro';
+  intro.innerHTML = '<div class="intro-in"><span class="intro-mark">R. KEREN</span><span class="intro-num">0</span></div>';
+  document.body.appendChild(intro);
+  document.documentElement.classList.add('loading');
+
+  (function () {
+    var num = intro.querySelector('.intro-num');
+    var n = 0, step = function () {
+      n += Math.max(1, Math.round((100 - n) / 12));
+      if (n > 100) n = 100;
+      num.textContent = n;
+      if (n < 100) setTimeout(step, 26);
+      else setTimeout(function () {
+        intro.classList.add('out');
+        document.documentElement.classList.remove('loading');
+        setTimeout(function () { intro.remove(); }, 900);
+      }, 260);
+    };
+    step();
+  })();
+
+  /* ---------- 9. custom cursor ---------- */
+  if (matchMedia('(pointer:fine)').matches) {
+    var cur = document.createElement('div'); cur.className = 'cursor';
+    var dot = document.createElement('div'); dot.className = 'cursor-dot';
+    document.body.appendChild(cur); document.body.appendChild(dot);
+    var cx = 0, cy = 0, tx = 0, ty = 0;
+    document.addEventListener('mousemove', function (e) {
+      tx = e.clientX; ty = e.clientY;
+      dot.style.transform = 'translate3d(' + tx + 'px,' + ty + 'px,0)';
+    });
+    (function loop() {
+      cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+      cur.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0)';
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a,button,.mask,input,textarea').forEach(function (el) {
+      el.addEventListener('mouseenter', function () { cur.classList.add('big'); });
+      el.addEventListener('mouseleave', function () { cur.classList.remove('big'); });
+    });
+  }
+
+  /* ---------- 10. running strip ---------- */
+  var firstBand = document.querySelector('.band');
+  if (firstBand) {
+    var strip = document.createElement('div');
+    strip.className = 'ticker';
+    var unit = 'ШЛАК · ШЛАМ · ОТВАЛЫ · ВТОРИЧНЫЕ МЕТАЛЛУРГИЧЕСКИЕ МАТЕРИАЛЫ · ';
+    strip.innerHTML = '<div class="ticker-row"><span>' + unit.repeat(4) + '</span><span>' + unit.repeat(4) + '</span></div>';
+    firstBand.parentNode.insertBefore(strip, firstBand.nextSibling);
+  }
+
+  /* ---------- 11. h2 line reveal ---------- */
+  document.querySelectorAll('h2').forEach(function (h) {
+    if (h.children.length) return;
+    h.innerHTML = '<span class="w"><i>' + h.textContent + '</i></span>';
+    var o = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('lit'); o.unobserve(e.target); } });
+    }, { threshold: 0.4 });
+    o.observe(h);
+  });
+
+  /* ---------- 12. magnetic buttons ---------- */
+  document.querySelectorAll('.btn').forEach(function (b) {
+    b.addEventListener('mousemove', function (e) {
+      var r = b.getBoundingClientRect();
+      var mx = e.clientX - r.left - r.width / 2;
+      var my = e.clientY - r.top - r.height / 2;
+      b.style.transform = 'translate3d(' + (mx * 0.18) + 'px,' + (my * 0.28) + 'px,0)';
+    });
+    b.addEventListener('mouseleave', function () { b.style.transform = ''; });
+  });
+
+  /* ---------- 13. page transition ---------- */
+  var veil = document.createElement('div'); veil.className = 'veil';
+  document.body.appendChild(veil);
+  document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || a.target === '_blank') return;
+      e.preventDefault();
+      veil.classList.add('on');
+      setTimeout(function () { location.href = a.getAttribute('href'); }, 520);
+    });
+  });
+
 })();
