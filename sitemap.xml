@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://slagrecovery.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://slagrecovery.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/"/>
+    <changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://slagrecovery.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/"/>
+    <changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://slagrecovery.com/kak-my-rabotaem.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://slagrecovery.com/granicy-primenimosti.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://slagrecovery.com/o-kompanii.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
