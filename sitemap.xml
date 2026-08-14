@@ -3,13 +3,41 @@
   <url><loc>https://slagrecovery.com/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/"/>
-    <changefreq>monthly</changefreq><priority>1.0</priority></url>
+    <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/"/>
-    <changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://slagrecovery.com/kak-my-rabotaem.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slagrecovery.com/granicy-primenimosti.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slagrecovery.com/o-kompanii.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://slagrecovery.com/otpravit-dannye.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/kak-my-rabotaem.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/kak-my-rabotaem.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/how-we-work.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/en/how-we-work.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/kak-my-rabotaem.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/how-we-work.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/granicy-primenimosti.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/granicy-primenimosti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/scope.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/en/scope.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/granicy-primenimosti.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/scope.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/o-kompanii.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/o-kompanii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/company.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/en/company.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/o-kompanii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/company.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/otpravit-dannye.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/otpravit-dannye.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/submit-data.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/en/submit-data.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/otpravit-dannye.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/submit-data.html"/>
+    <changefreq>monthly</changefreq></url>
 </urlset>
