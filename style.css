@@ -449,4 +449,16 @@ img{
   .fig{margin:26px auto}
   .fig img{max-width:100%!important}
 }
-html,body{max-width:100%;overflow-x:hidden}
+html,body{max-width:100%}
+body{overflow-x:clip}
+
+
+/* ---------- надёжность: без исправного скрипта ничего не прячется ---------- */
+html:not(.motion) .reveal{opacity:1!important;transform:none!important}
+html:not(.motion) .mask:after{display:none!important}
+html:not(.motion) .mask img{transform:none!important}
+html:not(.motion) h1 .w i,html:not(.motion) h2 .w i{transform:none!important}
+html:not(.motion) .intro{display:none!important}
+html:not(.motion) .veil{display:none!important}
+video{opacity:1!important;visibility:visible!important}
+.mask:after{pointer-events:none}
