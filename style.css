@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
 :root{
   --ink:#1C2225;
   --ink-2:#4A5459;
@@ -435,28 +437,3 @@ img{
 .lang a:hover{color:var(--ink)}
 .lang a.on{background:var(--ink);color:var(--paper)}
 @media(max-width:820px){.lang{margin-left:10px;padding-left:10px}}
-
-
-/* ---------- фикс: изображения на узких экранах ---------- */
-@media(max-width:820px){
-  .hero-media img,.page-head img,.band img,.fig img,.fig img[height],.mask img{
-    width:100%!important;max-width:100%!important;
-    height:auto!important;max-height:none!important;
-  }
-  .mask{display:block;width:100%;max-width:100%}
-  .fig{margin:26px auto}
-  .fig img{max-width:100%!important}
-}
-html,body{max-width:100%}
-body{overflow-x:clip}
-
-
-/* ---------- надёжность: без исправного скрипта ничего не прячется ---------- */
-html:not(.motion) .reveal{opacity:1!important;transform:none!important}
-html:not(.motion) .mask:after{display:none!important}
-html:not(.motion) .mask img{transform:none!important}
-html:not(.motion) h1 .w i,html:not(.motion) h2 .w i{transform:none!important}
-html:not(.motion) .intro{display:none!important}
-html:not(.motion) .veil{display:none!important}
-video{opacity:1!important;visibility:visible!important}
-.mask:after{pointer-events:none}
