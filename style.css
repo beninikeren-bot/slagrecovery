@@ -437,3 +437,16 @@ img{
 .lang a:hover{color:var(--ink)}
 .lang a.on{background:var(--ink);color:var(--paper)}
 @media(max-width:820px){.lang{margin-left:10px;padding-left:10px}}
+
+
+/* ---------- фикс: изображения на узких экранах ---------- */
+@media(max-width:820px){
+  .hero-media img,.page-head img,.band img,.fig img,.fig img[height],.mask img{
+    width:100%!important;max-width:100%!important;
+    height:auto!important;max-height:none!important;
+  }
+  .mask{display:block;width:100%;max-width:100%}
+  .fig{margin:26px auto}
+  .fig img{max-width:100%!important}
+}
+html,body{max-width:100%;overflow-x:hidden}
