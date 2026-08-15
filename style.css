@@ -437,3 +437,13 @@ img{
 .lang a:hover{color:var(--ink)}
 .lang a.on{background:var(--ink);color:var(--paper)}
 @media(max-width:820px){.lang{margin-left:10px;padding-left:10px}}
+
+
+/* ---------- фото на узких экранах: не шире контейнера ---------- */
+@media(max-width:820px){
+  .fig img,.fig img[height],.hero-media img,.page-head img,.band img{
+    width:100%!important;max-width:100%!important;
+    height:auto!important;max-height:none!important;
+  }
+  .mask{display:block;width:100%;max-width:100%}
+}
