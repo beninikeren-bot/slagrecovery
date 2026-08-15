@@ -449,15 +449,14 @@ img{
 }
 
 
-/* ---------- панорамный кадр в шапке: заполняет колонку по высоте ---------- */
+/* ---------- панорамный кадр в шапке: во всю ширину, без обрезки ---------- */
 @media(min-width:821px){
-  .page-head:has(img[src*="dump-aerial"]){align-items:stretch}
-  .page-head:has(img[src*="dump-aerial"]) > div:first-child{
-    display:flex;flex-direction:column;justify-content:center;
+  .page-head:has(img[src*="dump-aerial"]){
+    grid-template-columns:1fr;gap:30px;align-items:start;
   }
-  .page-head .mask:has(img[src*="dump-aerial"]){height:100%}
+  .page-head .mask:has(img[src*="dump-aerial"]){width:100%;max-width:100%}
   .page-head img[src*="dump-aerial"]{
-    width:100%!important;height:100%!important;min-height:280px;
-    object-fit:cover!important;object-position:50% 45%;
+    width:100%!important;max-width:100%!important;height:auto!important;
+    object-fit:contain!important;
   }
 }
