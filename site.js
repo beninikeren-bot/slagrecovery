@@ -4,6 +4,7 @@
   var doc = document.documentElement;
   doc.classList.add('js');
   if (reduce) { doc.classList.add('no-motion'); return; }
+  if (!('IntersectionObserver' in window)) { doc.classList.add('no-motion'); return; }
 
   /* ---------- 1. progress line in header ---------- */
   var bar = document.createElement('div');
@@ -234,5 +235,19 @@
     });
   });
 
+
+
+  /* ---------- 14. страховка: ничего не остаётся скрытым ---------- */
+  function failsafe() {
+    var vh = window.innerHeight;
+    Array.prototype.slice.call(document.querySelectorAll('.reveal:not(.in),.mask:not(.in)'))
+      .forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < vh && r.bottom > -1) el.classList.add('in');
+      });
+  }
+  setTimeout(failsafe, 1800);
+  window.addEventListener('load', function () { setTimeout(failsafe, 600); });
+  window.addEventListener('orientationchange', function () { setTimeout(failsafe, 300); });
 
 })();
