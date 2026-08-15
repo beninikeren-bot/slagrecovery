@@ -447,3 +447,17 @@ img{
   }
   .mask{display:block;width:100%;max-width:100%}
 }
+
+
+/* ---------- панорамный кадр в шапке: заполняет колонку по высоте ---------- */
+@media(min-width:821px){
+  .page-head:has(img[src*="dump-aerial"]){align-items:stretch}
+  .page-head:has(img[src*="dump-aerial"]) > div:first-child{
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .page-head .mask:has(img[src*="dump-aerial"]){height:100%}
+  .page-head img[src*="dump-aerial"]{
+    width:100%!important;height:100%!important;min-height:280px;
+    object-fit:cover!important;object-position:50% 45%;
+  }
+}
