@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Измерение загрузки</title>
+<style>
+  body{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:#fff;color:#111;
+       margin:0;padding:18px;font-size:17px;line-height:1.5}
+  h1{font-size:22px;margin:0 0 6px}
+  .sub{color:#666;font-size:15px;margin-bottom:18px}
+  #status{padding:14px;background:#f2f2f2;border-radius:6px;font-size:19px;margin-bottom:18px}
+  table{border-collapse:collapse;width:100%;font-size:15px}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid #e2e2e2;vertical-align:top}
+  th{background:#fafafa;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:#555}
+  td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  tr.slow td{background:#ffe9e4}
+  tr.veryslow td{background:#ffcdc2;font-weight:600}
+  .name{word-break:break-all}
+  .big{font-size:20px;margin:20px 0 8px;font-weight:600}
+  iframe{position:absolute;left:-9999px;width:1200px;height:900px;border:0}
+  .note{color:#666;font-size:14px;margin-top:20px}
+</style>
+</head>
+<body>
+
+<h1>Измерение загрузки сайта</h1>
+<div class="sub">Страница открывает главную у вас в браузере и засекает каждый запрос. Ничего не меняет.</div>
+
+<div id="status">Загружаю главную страницу…</div>
+
+<div id="summary"></div>
+<div id="out"></div>
+
+<div class="note">
+  Красным отмечено всё, что грузилось дольше секунды. Тёмно-красным — дольше трёх секунд.
+  Сделайте снимок экрана целиком и пришлите.
+</div>
+
+<iframe id="probe" src=""></iframe>
+
+<script>
+(function () {
+  var t0 = performance.now();
+  var iframe = document.getElementById('probe');
+  var status = document.getElementById('status');
+  var done = false;
+
+  iframe.src = 'index.html?probe=' + Date.now();
+
+  function ms(v) { return Math.round(v) + ' мс'; }
+  function kb(v) { return v ? Math.round(v / 1024) + ' КБ' : '—'; }
+
+  function shortName(u) {
+    try {
+      var a = document.createElement('a'); a.href = u;
+      var host = a.hostname;
+      var path = a.pathname.split('/').pop() || a.pathname;
+      return (host === location.hostname) ? path : host + ' / ' + path;
+    } catch (e) { return u; }
+  }
+
+  function report(reason) {
+    if (done) return;
+    done = true;
+    var total = performance.now() - t0;
+
+    var rows = [], win;
+    try { win = iframe.contentWindow; } catch (e) { win = null; }
+
+    if (win && win.performance && win.performance.getEntriesByType) {
+      rows = win.performance.getEntriesByType('resource').map(function (r) {
+        return {
+          name: shortName(r.name),
+          dur: r.duration,
+          size: r.transferSize || r.encodedBodySize || 0,
+          type: r.initiatorType,
+          wait: (r.responseStart && r.requestStart) ? (r.responseStart - r.requestStart) : 0
+        };
+      });
+      rows.sort(function (a, b) { return b.dur - a.dur; });
+    }
+
+    status.textContent = 'Главная загрузилась за ' + ms(total) +
+      (reason === 'timeout' ? ' — по истечении ожидания, загрузка не завершилась' : '') +
+      '. Запросов: ' + rows.length + '.';
+
+    var slowest = rows.length ? rows[0] : null;
+    var sum = document.getElementById('summary');
+    if (slowest) {
+      sum.innerHTML = '<div class="big">Дольше всего грузилось: ' + slowest.name +
+        ' — ' + ms(slowest.dur) + ', ' + kb(slowest.size) + '</div>';
+    }
+
+    var html = '<table><tr><th>Ресурс</th><th>Тип</th><th>Время</th><th>Ожидание ответа</th><th>Вес</th></tr>';
+    rows.forEach(function (r) {
+      var cls = r.dur > 3000 ? 'veryslow' : (r.dur > 1000 ? 'slow' : '');
+      html += '<tr class="' + cls + '"><td class="name">' + r.name + '</td><td>' + (r.type || '') +
+              '</td><td class="num">' + ms(r.dur) + '</td><td class="num">' + ms(r.wait) +
+              '</td><td class="num">' + kb(r.size) + '</td></tr>';
+    });
+    html += '</table>';
+    if (!rows.length) {
+      html = '<div class="big">Браузер не отдал данные о запросах. Пришлите снимок этой страницы всё равно.</div>';
+    }
+    document.getElementById('out').innerHTML = html;
+  }
+
+  iframe.addEventListener('load', function () { setTimeout(function () { report('load'); }, 900); });
+  setTimeout(function () { report('timeout'); }, 20000);
+
+  var n = 0;
+  var tick = setInterval(function () {
+    if (done) { clearInterval(tick); return; }
+    n++;
+    status.textContent = 'Загружаю главную страницу… ' + n + ' с';
+  }, 1000);
+})();
+</script>
+
+</body>
+</html>
