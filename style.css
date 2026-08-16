@@ -525,3 +525,8 @@ img{
 /* прокрутка разблокируется тем же сроком */
 html.loading{animation:unlock 0s linear 3.1s forwards}
 @keyframes unlock{to{overflow:visible}}
+
+
+/* ---------- завеса не залипает при возврате назад ---------- */
+.veil.on{animation:veil-release 0s linear 1.6s forwards}
+@keyframes veil-release{to{transform:translate3d(0,101%,0)}}
