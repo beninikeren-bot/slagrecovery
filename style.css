@@ -498,3 +498,11 @@ img{
 }
 .fig .mask{max-width:min(100%,860px)}
 .fig,.hero-media figure{display:block}
+
+
+/* ---------- ширина по содержимому ---------- */
+.fig img[src*="d-core"],.fig img[src*="d-cube"],.fig img[src*="d-flask"],
+.fig img[src*="d-road"],.fig img[src*="d-stop"]{
+  max-width:100%!important;width:100%!important;
+}
+.fig img[src*="v2-route"]{max-width:420px!important;width:100%!important}
