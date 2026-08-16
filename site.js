@@ -237,4 +237,23 @@
   });
 
 
+
+  /* ---------- СТРАХОВКА ЗАСТАВКИ ----------
+     При возврате «назад» страница восстанавливается из кэша браузера,
+     скрипт заново не выполняется, и занавес может остаться на экране.
+     Снимаем его при любом показе страницы и по жёсткому таймеру. */
+  function dropIntro() {
+    document.documentElement.classList.remove('loading');
+    var el = document.querySelector('.intro');
+    if (el && el.parentNode) el.parentNode.removeChild(el);
+  }
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) dropIntro();
+  });
+  window.addEventListener('pagehide', dropIntro);
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') setTimeout(dropIntro, 100);
+  });
+  setTimeout(dropIntro, 4000);
+
 })();
