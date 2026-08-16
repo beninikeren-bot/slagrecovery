@@ -506,3 +506,10 @@ img{
   max-width:100%!important;width:100%!important;
 }
 .fig img[src*="v2-route"]{max-width:420px!important;width:100%!important}
+
+
+/* ---------- два кадра рядом ---------- */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:end}
+.pair .fig{margin:0}
+.pair .fig img{width:100%!important;max-width:100%!important;height:auto!important}
+@media(max-width:520px){.pair{gap:12px}}
