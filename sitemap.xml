@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://slagrecovery.com/</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/"/>
+  <url><loc>https://slagrecovery.com/glavnaya.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/glavnaya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/"/>
     <changefreq>monthly</changefreq></url>
-  <url><loc>https://slagrecovery.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/"/>
+  <url><loc>https://slagrecovery.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/glavnaya.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/kak-my-rabotaem.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/kak-my-rabotaem.html"/>
