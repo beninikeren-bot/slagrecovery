@@ -490,3 +490,11 @@ img{
   width:100%!important;height:auto!important;max-height:none!important;
 }
 .fig img{max-width:min(100%,860px)!important}
+
+
+/* ---------- центрирование вставок ---------- */
+.fig img,.fig .mask,.hero-media img,.hero-media .mask,.page-head img,.page-head .mask{
+  margin-left:auto!important;margin-right:auto!important;
+}
+.fig .mask{max-width:min(100%,860px)}
+.fig,.hero-media figure{display:block}
