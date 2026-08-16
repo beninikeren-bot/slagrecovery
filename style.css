@@ -483,3 +483,10 @@ img{
   color:var(--ink-3);letter-spacing:.02em;margin-top:40px;
   padding-top:14px;border-top:1px solid var(--line);
 }
+
+
+/* ---------- изображения занимают ширину колонки ---------- */
+.fig img,.fig img[height],.hero-media img,.page-head img,.cols figure img,.cols-3 figure img{
+  width:100%!important;height:auto!important;max-height:none!important;
+}
+.fig img{max-width:min(100%,860px)!important}
