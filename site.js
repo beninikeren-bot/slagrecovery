@@ -256,4 +256,22 @@
   });
   setTimeout(dropIntro, 4000);
 
+
+  /* ---------- ЗАВЕСА ПЕРЕХОДА: снятие при возврате «назад» ----------
+     При нажатии «назад» страница восстанавливается из памяти браузера
+     вместе с завесой в закрытом положении, а скрипт заново не выполняется.
+     Снимаем её при каждом показе страницы. */
+  function openVeil() {
+    var v = document.querySelector('.veil');
+    if (v) v.classList.remove('on');
+    document.documentElement.classList.remove('loading');
+    var i = document.querySelector('.intro');
+    if (i && i.parentNode) i.parentNode.removeChild(i);
+  }
+  window.addEventListener('pageshow', openVeil);
+  window.addEventListener('popstate', openVeil);
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') openVeil();
+  });
+
 })();
