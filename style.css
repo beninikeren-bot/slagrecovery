@@ -352,7 +352,7 @@ html.no-motion h2 .w i{transform:none}
 /* ---------- page transition veil ---------- */
 .veil{
   position:fixed;inset:0;z-index:190;background:var(--ink);pointer-events:none;
-  transform:translate3d(0,101%,0);transition:transform .55s cubic-bezier(.76,0,.24,1);
+  transform:translate3d(0,-101%,0);transition:transform .55s cubic-bezier(.76,0,.24,1);
 }
 .veil.on{transform:translate3d(0,0,0)}
 html.no-motion .veil{display:none}
