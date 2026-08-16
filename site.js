@@ -196,7 +196,9 @@
   if (firstBand) {
     var strip = document.createElement('div');
     strip.className = 'ticker';
-    var unit = 'ШЛАК · ШЛАМ · ОТВАЛЫ · ВТОРИЧНЫЕ МЕТАЛЛУРГИЧЕСКИЕ МАТЕРИАЛЫ · ';
+    var unit = (document.documentElement.lang === 'en')
+      ? 'SLAG · SLUDGE · DUMPS · SECONDARY METALLURGICAL MATERIALS · '
+      : 'ШЛАК · ШЛАМ · ОТВАЛЫ · ВТОРИЧНЫЕ МЕТАЛЛУРГИЧЕСКИЕ МАТЕРИАЛЫ · ';
     strip.innerHTML = '<div class="ticker-row"><span>' + unit.repeat(4) + '</span><span>' + unit.repeat(4) + '</span></div>';
     firstBand.parentNode.insertBefore(strip, firstBand.nextSibling);
   }
