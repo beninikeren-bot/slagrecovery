@@ -515,7 +515,5 @@ img{
 @media(max-width:520px){.pair{gap:12px}}
 
 
-/* меню всегда с новой строки на узком экране — вид одинаков на любом языке */
-@media(max-width:820px){
-  .hbar nav{width:100%;margin-top:4px}
-}
+/* логотип отдельной строкой, меню под ним — одинаково на любом языке и ширине */
+.hbar nav{width:100%;margin-top:6px}
