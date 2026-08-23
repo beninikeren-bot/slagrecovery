@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сколько металла ушло в шлак и сколько он стоит — R. Keren</title>
+<meta name="description" content="Оценка отвала по вашим данным: объём переработки, содержание в шлаке, содержание в продукте и цена. Расчёт идёт на ваших числах.">
+<link rel="canonical" href="https://slagrecovery.com/ocenka-otvala.html">
+<link rel="alternate" hreflang="ru" href="https://slagrecovery.com/ocenka-otvala.html">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LLC R. Keren">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://slagrecovery.com/ocenka-otvala.html">
+<meta property="og:title" content="Сколько металла ушло в шлак и сколько он стоит">
+<meta property="og:description" content="Оценка отвала по вашим данным. Расчёт идёт на ваших числах — мы не подставляем ничего от себя.">
+<link rel="stylesheet" href="style.css?v=20">
+<style>
+/* ---------- калькулятор ---------- */
+.calc-eyebrow{color:#E4002B;font-weight:600}
+.calc-h1{color:#3E3B63}
+
+.calc-fields{margin-top:40px;border-top:1px solid var(--line)}
+.calc-field{
+  display:grid;grid-template-columns:1fr 190px;gap:20px;align-items:center;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.calc-field label{font-family:var(--cond);font-weight:600;font-size:19px}
+.calc-field .hint{
+  display:block;font-family:var(--sans);font-weight:400;font-size:14px;
+  line-height:1.45;color:var(--ink-2);margin-top:4px;max-width:46ch;
+}
+.calc-field input{
+  width:100%;padding:12px 14px;border:1px solid var(--line);background:#fff;
+  border-radius:2px;font-family:var(--mono);font-size:17px;font-weight:500;
+  color:var(--ink);text-align:right;
+}
+.calc-field input:focus{outline:2px solid var(--mn);outline-offset:-1px;border-color:var(--mn)}
+.calc-unit{font-family:var(--mono);font-size:13px;color:var(--ink-3);margin-left:9px;white-space:nowrap}
+.calc-inrow{display:flex;align-items:center}
+.calc-equiv{font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--ink-3);margin-top:8px;text-align:right}
+
+.calc-rec{margin-top:36px;padding:26px;background:var(--paper-2);border:1px solid var(--line)}
+.calc-rec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.calc-rec-val{font-family:var(--mono);font-size:32px;font-weight:600;color:var(--ox);line-height:1}
+.calc-rec input[type=range]{width:100%;margin-top:20px;accent-color:var(--ox);height:26px}
+.calc-ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.calc-rec-note{font-size:14px;line-height:1.55;color:var(--ink-2);margin:16px 0 0;padding-top:16px;border-top:1px solid var(--line);max-width:70ch}
+
+.calc-out{margin-top:30px;background:var(--ink);color:var(--paper);padding:30px 28px}
+.calc-out .eyebrow{color:#8F999E}
+.calc-res{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.calc-res .k{font-size:14px;color:#8F999E;margin-bottom:7px}
+.calc-res .v{font-family:var(--mono);font-weight:600;font-size:clamp(22px,4vw,30px);line-height:1.1}
+.calc-res .u{font-size:13px;color:#8F999E;margin-left:6px;font-weight:400}
+
+.calc-band{margin-top:28px;padding-top:24px;border-top:1px solid #39434A}
+.calc-band-h{font-size:14px;color:#8F999E;margin-bottom:16px}
+.calc-bar{
+  display:grid;grid-template-columns:54px 1fr 130px;align-items:center;gap:14px;
+  margin-bottom:10px;font-family:var(--mono);font-size:13px;
+}
+.calc-bar .pct{color:#8F999E;text-align:right}
+.calc-bar .track{height:9px;background:#39434A;position:relative;overflow:hidden}
+.calc-bar .fill{position:absolute;inset:0 auto 0 0;background:var(--ox);width:0;transition:width .25s ease}
+.calc-bar.now .pct{color:var(--ox)}
+.calc-bar .amt{text-align:right}
+
+.calc-note{margin-top:30px;font-size:15px;line-height:1.6;color:var(--ink-2);max-width:72ch}
+.calc-note b{color:var(--ink)}
+
+@media(max-width:640px){
+  .calc-field{grid-template-columns:1fr;gap:10px}
+  .calc-res{grid-template-columns:1fr;gap:22px}
+  .calc-bar{grid-template-columns:44px 1fr 106px;gap:10px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.calc-bar .fill{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hbar">
+    <a class="brand" href="glavnaya.html"><img class="brand-mark" src="logo-icon.svg?v=2" alt="" width="34" height="34"><b class="notranslate" translate="no">R. Keren</b><span>Шлак · шлам · отвалы</span></a>
+    <nav>
+      <a href="glavnaya.html">Главная</a>
+      <a href="ocenka-otvala.html" aria-current="page">Оценка отвала</a>
+      <a href="kak-my-rabotaem.html">Как мы работаем</a>
+      <a href="granicy-primenimosti.html">Границы применимости</a>
+      <a href="voprosy-promyshlennika.html">Вопросы</a>
+      <a href="o-kompanii.html">О компании</a>
+      <a href="otpravit-dannye.html">Отправить данные</a>
+      <span class="lang notranslate" translate="no"><a href="index.html">EN</a><a class="on" href="ocenka-otvala.html">RU</a></span>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:0;border-bottom:0">
+  <div class="wrap">
+    <span class="eyebrow calc-eyebrow">Оценка отвала</span>
+    <h1 class="calc-h1">Сколько металла ушло в шлак и сколько он стоит</h1>
+    <p class="lead" style="margin-top:20px">Четыре числа, которые вы знаете по своему предприятию. Расчёт идёт на ваших данных — мы не подставляем ничего от себя.</p>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap">
+
+    <div class="calc-fields">
+      <div class="calc-field">
+        <label for="vol">Объём переработки
+          <span class="hint">Сколько материала планируете перерабатывать в месяц</span>
+        </label>
+        <div class="calc-inrow"><input id="vol" type="number" min="0" step="100" value="4000" inputmode="numeric"><span class="calc-unit">т/мес</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label for="grade">Содержание в шлаке
+          <span class="hint">Доля ценного компонента в исходном материале — по вашему анализу</span>
+        </label>
+        <div class="calc-inrow"><input id="grade" type="number" min="0" max="100" step="0.1" value="8" inputmode="decimal"><span class="calc-unit">%</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label for="pgrade">Содержание в продукте
+          <span class="hint">Продукт из шлака не бывает чистым — здесь доля металла в том, что получаем на выходе</span>
+        </label>
+        <div class="calc-inrow"><input id="pgrade" type="number" min="1" max="100" step="1" value="65" inputmode="numeric"><span class="calc-unit">%</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label for="price">Цена продукта
+          <span class="hint">Во сколько вы оцениваете тонну такого сырья — для своей печи или на продажу</span>
+        </label>
+        <div>
+          <div class="calc-inrow"><input id="price" type="number" min="0" step="10" value="250" inputmode="numeric"><span class="calc-unit">$/т</span></div>
+          <div class="calc-equiv" id="equiv"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-rec">
+      <div class="calc-rec-top">
+        <div>
+          <span class="eyebrow" style="margin-bottom:6px">Извлечение</span>
+          <div style="font-size:15px;color:var(--ink-2)">Двигайте — результат пересчитывается</div>
+        </div>
+        <div class="calc-rec-val"><span id="recV">50</span>%</div>
+      </div>
+      <input id="rec" type="range" min="5" max="95" step="5" value="50" aria-label="Извлечение, процентов">
+      <div class="calc-ticks"><span>5</span><span>25</span><span>50</span><span>75</span><span>95</span></div>
+      <p class="calc-rec-note">Это единственное число, которого не знает никто заранее. Оно зависит от того, в каком виде металл находится в вашем материале, и определяется испытаниями. Поэтому оно у вас в руках, а не в нашей формуле.</p>
+    </div>
+
+    <div class="calc-out">
+      <span class="eyebrow">За год работы</span>
+      <div class="calc-res">
+        <div>
+          <div class="k">Продукт на выходе</div>
+          <div class="v"><span id="mass">0</span><span class="u">т</span></div>
+        </div>
+        <div>
+          <div class="k">В нём металла</div>
+          <div class="v"><span id="metal">0</span><span class="u">т</span></div>
+        </div>
+        <div>
+          <div class="k">По цене продукта</div>
+          <div class="v"><span id="value">$0</span></div>
+        </div>
+      </div>
+
+      <div class="calc-band">
+        <div class="calc-band-h">Как результат меняется вместе с извлечением</div>
+        <div id="bars"></div>
+      </div>
+    </div>
+
+    <p class="calc-note">
+      <b>Что здесь не учтено.</b> Затраты на переработку: оборудование, монтаж, энергия, персонал, логистика. Они определяются схемой, а схема — свойствами вашего материала. Пока материал не исследован, любая цифра затрат была бы выдумана.
+    </p>
+    <p class="calc-note">
+      <b>Почему цена сырья, а не цена металла.</b> Продукт, извлечённый из шлака, идёт как сырьё — в собственную печь или на сторону — и стоит столько, сколько стоит сырьё. Разрыв с биржевой котировкой металла бывает кратным.
+    </p>
+    <p class="calc-note">
+      <b>Цена идёт следом за содержанием.</b> Вписав цену при определённом содержании, вы задали свою оценку металла в продукте. Меняете содержание — цена пересчитывается по ней же, чтобы старая цифра не пережила смену качества. Связь взята прямой; в жизни бедный продукт часто дешевеет быстрее, поэтому цену можно переписать в любой момент — калькулятор примет вашу.
+    </p>
+    <p class="calc-note">
+      <b>Что показывает расчёт.</b> Верхнюю границу — во сколько вы сами оцениваете металл, который сейчас лежит в отвале. Есть ли смысл разбираться дальше, видно уже по порядку этой величины.
+    </p>
+
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Пришлите данные о вашем материале</h2>
+    <p class="lead" style="color:#B9C0C4;margin-bottom:28px">Мы скажем, есть ли смысл двигаться дальше. Это ни к чему не обязывает.</p>
+    <a class="btn" href="otpravit-dannye.html">Отправить данные о материале</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="foot-mark" src="logo-icon-light.svg?v=2" alt="R. Keren" width="40" height="40">
+      <a href="ocenka-otvala.html">Оценка отвала</a>
+      <a href="kak-my-rabotaem.html">Как мы работаем</a>
+      <a href="granicy-primenimosti.html">Границы применимости</a>
+      <a href="o-kompanii.html">О компании</a>
+      <a href="voprosy-promyshlennika.html">Вопросы промышленника</a>
+      <a href="otpravit-dannye.html">Отправить данные</a>
+    </div>
+    <div class="fnote">
+      <span class="notranslate" translate="no">LLC R. Keren</span><br>
+      Батуми, ул. Шерифа Химшиашвили, 11а<br>
+      Грузия<br><br>
+      <a href="mailto:info@slagrecovery.com" translate="no" style="display:inline;font-size:12px">info@slagrecovery.com</a><br>
+      <a href="tel:+995595410082" translate="no" style="display:inline;font-size:12px">+995 595 41 00 82</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js?v=20" defer></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var nf = function(n){ return Math.round(n).toLocaleString('ru-RU').replace(/,/g,'\u00A0'); };
+  var STEPS = [20,40,60,80];
+
+  // Отношение цены к содержанию задаёт клиент: вписал 250 при 65% —
+  // значит оценил металл в продукте в 385 $/т. Меняется содержание — цена идёт следом.
+  var perMetal = 250 / 0.65;
+
+  function clampP(){
+    return Math.min(100, Math.max(1, +$('pgrade').value || 1));
+  }
+
+  function calc(){
+    var vol = +$('vol').value || 0;
+    var grade = +$('grade').value || 0;
+    var pgrade = clampP();
+    var price = +$('price').value || 0;
+    var rec = +$('rec').value;
+
+    $('recV').textContent = rec;
+
+    var annual = vol * 12;
+    var metal = annual * grade/100 * rec/100;
+    var product = metal / (pgrade/100);
+
+    $('metal').textContent = nf(metal);
+    $('mass').textContent = nf(product);
+    $('value').textContent = '$' + nf(product * price);
+
+    $('equiv').textContent = price > 0
+      ? '$' + nf(price) + ' за тонну при ' + pgrade + '% — это ваша оценка $' + nf(price / (pgrade/100)) + ' за тонну металла'
+      : '';
+
+    var max = annual * grade/100 * 0.95 / (pgrade/100) * price;
+    var html = '';
+    for (var i = 0; i < STEPS.length; i++){
+      var p = STEPS[i];
+      var v = annual * grade/100 * p/100 / (pgrade/100) * price;
+      var w = max > 0 ? (v/max*100) : 0;
+      var now = Math.abs(p - rec) < 5 ? ' now' : '';
+      html += '<div class="calc-bar' + now + '">' +
+                '<span class="pct">' + p + '%</span>' +
+                '<span class="track"><span class="fill" style="width:' + w + '%"></span></span>' +
+                '<span class="amt">$' + nf(v) + '</span>' +
+              '</div>';
+    }
+    $('bars').innerHTML = html;
+  }
+
+  // клиент правит цену вручную — это его новая оценка, запоминаем её
+  $('price').addEventListener('input', function(){
+    var price = +$('price').value || 0;
+    if (price > 0) perMetal = price / (clampP()/100);
+    calc();
+  });
+
+  // клиент правит содержание — цена идёт следом за его же оценкой
+  $('pgrade').addEventListener('input', function(){
+    $('price').value = Math.round(perMetal * clampP()/100);
+    calc();
+  });
+
+  ['vol','grade','rec'].forEach(function(id){
+    $(id).addEventListener('input', calc);
+  });
+
+  calc();
+})();
+</script>
+</body>
+</html>
