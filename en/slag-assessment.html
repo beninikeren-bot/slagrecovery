@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How much metal went into the slag — and what it is worth | R. Keren</title>
+<meta name="description" content="Assess your dump on your own data: processing volume, grade in slag, grade in product and price. The calculation runs on your numbers.">
+<link rel="canonical" href="https://slagrecovery.com/en/slag-assessment.html">
+<link rel="alternate" hreflang="ru" href="https://slagrecovery.com/ocenka-otvala.html">
+<link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/slag-assessment.html">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LLC R. Keren">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://slagrecovery.com/en/slag-assessment.html">
+<meta property="og:title" content="How much metal went into the slag — and what it is worth">
+<meta property="og:description" content="Assess your dump on your own data. The calculation runs on your numbers — we add nothing of our own.">
+<link rel="stylesheet" href="../style.css?v=25">
+<style>
+/* ---------- calculator ---------- */
+.calc-eyebrow{color:#E4002B;font-weight:600}
+.calc-h1{color:#3E3B63}
+
+.calc-fields{margin-top:40px;border-top:1px solid var(--line)}
+.calc-field{
+  display:grid;grid-template-columns:1fr 190px;gap:20px;align-items:center;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.calc-field label{font-family:var(--cond);font-weight:600;font-size:19px}
+.calc-field .hint{
+  display:block;font-family:var(--sans);font-weight:400;font-size:14px;
+  line-height:1.45;color:var(--ink-2);margin-top:4px;max-width:46ch;
+}
+.calc-field input{
+  width:100%;padding:12px 14px;border:1px solid var(--line);background:#fff;
+  border-radius:2px;font-family:var(--mono);font-size:17px;font-weight:500;
+  color:var(--ink);text-align:right;
+}
+.calc-field input:focus{outline:2px solid var(--mn);outline-offset:-1px;border-color:var(--mn)}
+.calc-unit{font-family:var(--mono);font-size:13px;color:var(--ink-3);margin-left:9px;white-space:nowrap}
+.calc-inrow{display:flex;align-items:center}
+.calc-equiv{font-family:var(--mono);font-size:12px;line-height:1.5;color:var(--ink-3);margin-top:8px;text-align:right}
+
+.calc-rec{margin-top:36px;padding:26px;background:var(--paper-2);border:1px solid var(--line)}
+.calc-rec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.calc-rec-val{font-family:var(--mono);font-size:32px;font-weight:600;color:var(--ox);line-height:1}
+.calc-rec input[type=range]{width:100%;margin-top:20px;accent-color:var(--ox);height:26px}
+.calc-ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.calc-rec-note{font-size:14px;line-height:1.55;color:var(--ink-2);margin:16px 0 0;padding-top:16px;border-top:1px solid var(--line);max-width:70ch}
+
+.calc-out{margin-top:30px;background:var(--ink);color:var(--paper);padding:30px 28px}
+.calc-out .eyebrow{color:#8F999E}
+.calc-res{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.calc-res .k{font-size:14px;color:#8F999E;margin-bottom:7px}
+.calc-res .v{font-family:var(--mono);font-weight:600;font-size:clamp(22px,4vw,30px);line-height:1.1}
+.calc-res .u{font-size:13px;color:#8F999E;margin-left:6px;font-weight:400}
+
+.calc-band{margin-top:28px;padding-top:24px;border-top:1px solid #39434A}
+.calc-band-h{font-size:14px;color:#8F999E;margin-bottom:16px}
+.calc-bar{
+  display:grid;grid-template-columns:54px 1fr 130px;align-items:center;gap:14px;
+  margin-bottom:10px;font-family:var(--mono);font-size:13px;
+}
+.calc-bar .pct{color:#8F999E;text-align:right}
+.calc-bar .track{height:9px;background:#39434A;position:relative;overflow:hidden}
+.calc-bar .fill{position:absolute;inset:0 auto 0 0;background:var(--ox);width:0;transition:width .25s ease}
+.calc-bar.now .pct{color:var(--ox)}
+.calc-bar .amt{text-align:right}
+
+.calc-note{margin-top:30px;font-size:15px;line-height:1.6;color:var(--ink-2);max-width:72ch}
+.calc-note b{color:var(--ink)}
+
+@media(max-width:640px){
+  .calc-field{grid-template-columns:1fr;gap:10px}
+  .calc-res{grid-template-columns:1fr;gap:22px}
+  .calc-bar{grid-template-columns:44px 1fr 106px;gap:10px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.calc-bar .fill{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hbar">
+    <a class="brand" href="../index.html"><img class="brand-mark" src="../logo-icon.svg?v=2" alt="" width="34" height="34"><b class="notranslate" translate="no">R. Keren</b><span>Slag · sludge · dumps</span></a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="slag-assessment.html" aria-current="page">Slag assessment</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="scope.html">Scope</a>
+      <a href="questions.html">Questions</a>
+      <a href="company.html">Company</a>
+      <a href="submit-data.html">Submit data</a>
+      <span class="lang notranslate" translate="no"><a href="slag-assessment.html">EN</a><a class="on" href="slag-assessment.html">RU</a></span>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:0;border-bottom:0">
+  <div class="wrap">
+    <span class="eyebrow calc-eyebrow">Slag assessment</span>
+    <h1 class="calc-h1">How much metal went into the slag — and what it is worth</h1>
+    <p class="lead" style="margin-top:20px">Four numbers you already know about your plant. The calculation runs on your data — we add nothing of our own.</p>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap">
+
+    <div class="calc-fields">
+      <div class="calc-field">
+        <label for="vol">Processing volume
+          <span class="hint">How much material you plan to process per month</span>
+        </label>
+        <div class="calc-inrow"><input id="vol" type="number" min="0" step="100" value="4000" inputmode="numeric"><span class="calc-unit">t/month</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label for="grade">Grade in slag
+          <span class="hint">Share of the valuable component in the feed, from your own analysis</span>
+        </label>
+        <div class="calc-inrow"><input id="grade" type="number" min="0" max="100" step="0.1" value="8" inputmode="decimal"><span class="calc-unit">%</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label for="pgrade">Grade in product
+          <span class="hint">Product recovered from slag is never pure. This is the metal share in what comes out</span>
+        </label>
+        <div class="calc-inrow"><input id="pgrade" type="number" min="1" max="100" step="1" value="65" inputmode="numeric"><span class="calc-unit">%</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label for="price">Product price
+          <span class="hint">What a tonne of such feed is worth to you, for your own furnace or for sale</span>
+        </label>
+        <div>
+          <div class="calc-inrow"><input id="price" type="number" min="0" step="10" value="250" inputmode="numeric"><span class="calc-unit">$/т</span></div>
+          <div class="calc-equiv" id="equiv"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-rec">
+      <div class="calc-rec-top">
+        <div>
+          <span class="eyebrow" style="margin-bottom:6px">Recovery</span>
+          <div style="font-size:15px;color:var(--ink-2)">Drag the slider — the result updates</div>
+        </div>
+        <div class="calc-rec-val"><span id="recV">50</span>%</div>
+      </div>
+      <input id="rec" type="range" min="5" max="95" step="5" value="50" aria-label="Recovery, percent">
+      <div class="calc-ticks"><span>5</span><span>25</span><span>50</span><span>75</span><span>95</span></div>
+      <p class="calc-rec-note">This is the one number nobody knows in advance. It depends on how the metal sits in your material and is established by testing. That is why it stays in your hands rather than in our formula.</p>
+    </div>
+
+    <div class="calc-out">
+      <span class="eyebrow">Per year of operation</span>
+      <div class="calc-res">
+        <div>
+          <div class="k">Product output</div>
+          <div class="v"><span id="mass">0</span><span class="u">т</span></div>
+        </div>
+        <div>
+          <div class="k">Metal contained</div>
+          <div class="v"><span id="metal">0</span><span class="u">т</span></div>
+        </div>
+        <div>
+          <div class="k">At your product price</div>
+          <div class="v"><span id="value">$0</span></div>
+        </div>
+      </div>
+
+      <div class="calc-band">
+        <div class="calc-band-h">How the result moves with recovery</div>
+        <div id="bars"></div>
+      </div>
+    </div>
+
+    <p class="calc-note">
+      <b>What is not included.</b> Processing costs: equipment, installation, energy, staff, logistics. They follow from the flowsheet, and the flowsheet follows from the properties of your material. Until the material has been studied, any cost figure would be invented.
+    </p>
+    <p class="calc-note">
+      <b>Why the price of feed, not the price of metal.</b> Product recovered from slag goes back as feed — into your own furnace or to a buyer — and is worth what feed is worth. The gap against the exchange quotation for metal is often several times over.
+    </p>
+    <p class="calc-note">
+      <b>Price follows grade.</b> By entering a price at a given grade, you set your own valuation of the metal in the product. Change the grade and the price is recalculated from that same valuation, so an old figure does not outlive a change in quality. The relation is taken as proportional; in practice a leaner product often loses value faster, so you can overwrite the price at any point and the calculator will take yours.
+    </p>
+    <p class="calc-note">
+      <b>What the calculation shows.</b> An upper bound — what you yourself value the metal now sitting in the dump at. Whether it is worth looking further is already visible from the order of this figure.
+    </p>
+
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Send us data on your material</h2>
+    <p class="lead" style="color:#B9C0C4;margin-bottom:28px">We will tell you whether there is any point in going further. It commits you to nothing.</p>
+    <a class="btn" href="submit-data.html">Submit data on your material</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="foot-mark" src="../logo-icon-light.svg?v=2" alt="R. Keren" width="40" height="40">
+      <a href="slag-assessment.html">Slag assessment</a>
+      <a href="how-we-work.html">How we work</a>
+      <a href="scope.html">Scope</a>
+      <a href="company.html">Company</a>
+      <a href="questions.html">Industry questions</a>
+      <a href="submit-data.html">Submit data</a>
+    </div>
+    <div class="fnote">
+      <span class="notranslate" translate="no">LLC R. Keren</span><br>
+      Batumi, 11a Sherif Khimshiashvili St.<br>
+      Georgia<br><br>
+      <a href="mailto:info@slagrecovery.com" translate="no" style="display:inline;font-size:12px">info@slagrecovery.com</a><br>
+      <a href="tel:+995595410082" translate="no" style="display:inline;font-size:12px">+995 595 41 00 82</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../site.js?v=20" defer></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var nf = function(n){ return Math.round(n).toLocaleString('en-US'); };
+  var STEPS = [20,40,60,80];
+
+  // The client sets the price-to-grade ratio: 250 at 65% means a valuation of
+  // 385 $/t of metal. When the grade changes, the price follows it.
+  var perMetal = 250 / 0.65;
+
+  function clampP(){
+    return Math.min(100, Math.max(1, +$('pgrade').value || 1));
+  }
+
+  function calc(){
+    var vol = +$('vol').value || 0;
+    var grade = +$('grade').value || 0;
+    var pgrade = clampP();
+    var price = +$('price').value || 0;
+    var rec = +$('rec').value;
+
+    $('recV').textContent = rec;
+
+    var annual = vol * 12;
+    var metal = annual * grade/100 * rec/100;
+    var product = metal / (pgrade/100);
+
+    $('metal').textContent = nf(metal);
+    $('mass').textContent = nf(product);
+    $('value').textContent = '$' + nf(product * price);
+
+    $('equiv').textContent = price > 0
+      ? '$' + nf(price) + ' per tonne at ' + pgrade + '% — your valuation of $' + nf(price / (pgrade/100)) + ' per tonne of metal'
+      : '';
+
+    var max = annual * grade/100 * 0.95 / (pgrade/100) * price;
+    var html = '';
+    for (var i = 0; i < STEPS.length; i++){
+      var p = STEPS[i];
+      var v = annual * grade/100 * p/100 / (pgrade/100) * price;
+      var w = max > 0 ? (v/max*100) : 0;
+      var now = Math.abs(p - rec) < 5 ? ' now' : '';
+      html += '<div class="calc-bar' + now + '">' +
+                '<span class="pct">' + p + '%</span>' +
+                '<span class="track"><span class="fill" style="width:' + w + '%"></span></span>' +
+                '<span class="amt">$' + nf(v) + '</span>' +
+              '</div>';
+    }
+    $('bars').innerHTML = html;
+  }
+
+  // the client edits the price: that is a new valuation, remember it
+  $('price').addEventListener('input', function(){
+    var price = +$('price').value || 0;
+    if (price > 0) perMetal = price / (clampP()/100);
+    calc();
+  });
+
+  // the client edits the grade: the price follows their own valuation
+  $('pgrade').addEventListener('input', function(){
+    $('price').value = Math.round(perMetal * clampP()/100);
+    calc();
+  });
+
+  ['vol','grade','rec'].forEach(function(id){
+    $(id).addEventListener('input', calc);
+  });
+
+  calc();
+})();
+</script>
+</body>
+</html>
