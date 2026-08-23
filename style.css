@@ -38,6 +38,18 @@ nav a{
 nav a:hover{color:var(--ink);border-bottom-color:var(--line)}
 nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--mn)}
 
+/* ---------- переключатель языка: всегда на виду ---------- */
+@media(max-width:820px){
+  .hbar{position:relative;padding-right:96px}
+  .lang{
+    position:absolute;top:14px;right:0;margin:0;padding:0;border-left:0;z-index:2;
+  }
+  .lang a{font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:2px}
+  .lang a.on{border-color:var(--ink)}
+  nav{gap:14px 18px;width:100%;margin-top:6px}
+  nav a{font-size:14px}
+}
+
 /* ---------- type ---------- */
 h1{
   font-family:var(--cond);font-weight:600;letter-spacing:-.01em;line-height:1.08;
