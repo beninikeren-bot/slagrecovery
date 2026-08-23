@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://slagrecovery.com/ocenka-otvala.html">
 <meta property="og:title" content="Сколько металла ушло в шлак и сколько он стоит">
 <meta property="og:description" content="Оценка отвала по вашим данным. Расчёт идёт на ваших числах — мы не подставляем ничего от себя.">
-<link rel="stylesheet" href="style.css?v=20">
+<link rel="stylesheet" href="style.css?v=26">
 <style>
 /* ---------- калькулятор ---------- */
 .calc-eyebrow{color:#E4002B;font-weight:600}
@@ -48,6 +48,8 @@
 .calc-ticks{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--ink-3)}
 .calc-rec-note{font-size:14px;line-height:1.55;color:var(--ink-2);margin:16px 0 0;padding-top:16px;border-top:1px solid var(--line);max-width:70ch}
 
+.calc-out{transition:box-shadow .35s ease}
+.calc-out.pulse{box-shadow:0 0 0 3px var(--ox)}
 .calc-out{margin-top:30px;background:var(--ink);color:var(--paper);padding:30px 28px}
 .calc-out .eyebrow{color:#8F999E}
 .calc-res{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
@@ -152,6 +154,8 @@
       <div class="calc-ticks"><span>5</span><span>25</span><span>50</span><span>75</span><span>95</span></div>
       <p class="calc-rec-note">Это единственное число, которого не знает никто заранее. Оно зависит от того, в каком виде металл находится в вашем материале, и определяется испытаниями. Поэтому оно у вас в руках, а не в нашей формуле.</p>
     </div>
+
+    <p style="margin:28px 0 0"><button type="button" id="calcGo" class="btn solid" style="min-width:280px;max-width:100%;text-align:center;font-size:19px;padding:15px 28px;border:0;cursor:pointer;font-family:inherit">Рассчитать</button></p>
 
     <div class="calc-out">
       <span class="eyebrow">За год работы</span>
@@ -291,6 +295,14 @@
 
   ['vol','grade','rec'].forEach(function(id){
     $(id).addEventListener('input', calc);
+  });
+
+  document.getElementById('calcGo').addEventListener('click', function(){
+    calc();
+    var out = document.querySelector('.calc-out');
+    out.scrollIntoView({behavior:'smooth', block:'center'});
+    out.classList.add('pulse');
+    setTimeout(function(){ out.classList.remove('pulse'); }, 1400);
   });
 
   calc();
