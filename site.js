@@ -4,27 +4,6 @@
   var doc = document.documentElement;
   doc.classList.add('js');
 
-  /* ---------- мобильное меню: одна строка + раскрывающийся список ----------
-     Создаётся до проверки prefers-reduced-motion, чтобы работать всегда. */
-  (function () {
-    var hbar = document.querySelector('.hbar');
-    var nav = hbar && hbar.querySelector('nav');
-    if (!hbar || !nav) return;
-
-    var btn = document.createElement('button');
-    btn.className = 'navtoggle';
-    btn.type = 'button';
-    btn.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Menu' : 'Меню');
-    btn.setAttribute('aria-expanded', 'false');
-    btn.innerHTML = '<span></span><span></span><span></span>';
-    hbar.insertBefore(btn, nav);
-
-    btn.addEventListener('click', function () {
-      var open = hbar.classList.toggle('nav-open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  })();
-
   if (reduce) { doc.classList.add('no-motion'); return; }
 
   /* ---------- 1. progress line in header ---------- */
