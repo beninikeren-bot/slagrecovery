@@ -3,113 +3,151 @@
   <url><loc>https://slagrecovery.com/glavnaya.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/glavnaya.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/glavnaya.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/kak-my-rabotaem.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/kak-my-rabotaem.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/how-we-work.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/how-we-work.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/how-we-work.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/kak-my-rabotaem.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/how-we-work.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/how-we-work.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/granicy-primenimosti.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/granicy-primenimosti.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/scope.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/scope.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/scope.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/granicy-primenimosti.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/scope.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/scope.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/o-kompanii.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/o-kompanii.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/company.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/company.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/company.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/o-kompanii.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/company.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/company.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/otpravit-dannye.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/otpravit-dannye.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/submit-data.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/submit-data.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/submit-data.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/otpravit-dannye.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/submit-data.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/submit-data.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/voprosy-promyshlennika.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/voprosy-promyshlennika.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/questions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/questions.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/questions.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/voprosy-promyshlennika.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/questions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/questions.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/mehanika-zahvata.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/mehanika-zahvata.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/metal-entrapment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/metal-entrapment.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/metal-entrapment.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/mehanika-zahvata.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/metal-entrapment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/metal-entrapment.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/soderzhanie-i-metallicheskaya-faza.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/soderzhanie-i-metallicheskaya-faza.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/total-content-vs-metallic-phase.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/total-content-vs-metallic-phase.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/total-content-vs-metallic-phase.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/soderzhanie-i-metallicheskaya-faza.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/total-content-vs-metallic-phase.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/total-content-vs-metallic-phase.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/magnitnaya-separaciya.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/magnitnaya-separaciya.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/magnetic-separation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/magnetic-separation.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/magnetic-separation.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/magnitnaya-separaciya.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/magnetic-separation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/magnetic-separation.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/tonkaya-frakciya.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/tonkaya-frakciya.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/fine-fraction.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/fine-fraction.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/fine-fraction.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/tonkaya-frakciya.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/fine-fraction.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/fine-fraction.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/vlazhnyy-shlam.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/vlazhnyy-shlam.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/wet-sludge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/wet-sludge.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/wet-sludge.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/vlazhnyy-shlam.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/wet-sludge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/wet-sludge.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/ocenka-otvala.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/ocenka-otvala.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/slag-assessment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/slag-assessment.html"/>
+    <changefreq>monthly</changefreq></url>
+  <url><loc>https://slagrecovery.com/en/slag-assessment.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/ocenka-otvala.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/slag-assessment.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/slag-assessment.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/ocenka-otvala-analizy.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/ocenka-otvala-analizy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/dump-assessment-tests.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/dump-assessment-tests.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/dump-assessment-tests.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/ocenka-otvala-analizy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/dump-assessment-tests.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/dump-assessment-tests.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/zavodskaya-laboratoriya.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/zavodskaya-laboratoriya.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/plant-laboratory-limits.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/plant-laboratory-limits.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/plant-laboratory-limits.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/zavodskaya-laboratoriya.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/plant-laboratory-limits.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/plant-laboratory-limits.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/otbor-proby.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/otbor-proby.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/representative-sampling.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/representative-sampling.html"/>
     <changefreq>monthly</changefreq></url>
   <url><loc>https://slagrecovery.com/en/representative-sampling.html</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://slagrecovery.com/otbor-proby.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://slagrecovery.com/en/representative-sampling.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slagrecovery.com/en/representative-sampling.html"/>
     <changefreq>monthly</changefreq></url>
 </urlset>
